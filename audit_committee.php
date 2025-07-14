@@ -16,7 +16,7 @@
             LEFT JOIN audit_committee ac ON ac.group_year_start = dc.group_year_start AND ac.group_year_end = dc.group_year_end
             LEFT JOIN audit_committee_group acg ON acg.id = ac.position1
             WHERE dc.is_active = 1 AND ac.is_active = 1
-            ORDER BY dc.group_year_start DESC , acg.display_order ASC";
+            ORDER BY dc.group_year_start DESC , acg.display_order ASC, ac.id_committee ASC;";
 
     $result = $conn->query($sql);
 
